@@ -33,7 +33,9 @@ function TierTitle({ label }: { label: SponsorTier["tier"] }) {
               "polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px)",
           }}
         >
-          {label === "CLOUD SPONSOR" || label === "Domain Partner" ? label : `${label.toUpperCase()} TIER`}
+          {label === "In association with" || label === "Domain Partner"
+            ? label
+            : `${label.toUpperCase()} TIER`}
         </div>
       </div>
     </div>
@@ -269,7 +271,7 @@ export default function SponsorsSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.08 }}
           >
-            <TierTitle label="CLOUD SPONSOR" />
+            <TierTitle label="In association with" />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               <div className="sm:col-start-1 lg:col-start-2">
                 <SponsorCard
